@@ -125,7 +125,6 @@ The classical proofs (Menshikov, Aizenman–Barsky, Duminil-Copin–Tassion, and
 
 - **$k=2$ in dimensions $d\ge 3$.** Percolation is known for $d=2$ and for all sufficiently large $d$. A proof for every $d\ge 3$ is claimed in [`ai-outputs/2_NN_percolates/`](ai-outputs/2_NN_percolates/); digesting it has priority (see [Claims under review](#claims-under-review)).
 - **Bidirectional graphs in low dimensions.** Close the gap between the two criteria for the BnG above in small dimensions. For example, does the 3-BnG percolate in $d=2$? It is conjectured to [[JKLT25](#ref-jklt25)].
-- **Uniqueness and the structure of infinite clusters.** The Burton–Keane argument [[BK89](#ref-bk89)] needs insertion tolerance. Is vertex-wise resampling enough to prove uniqueness of the infinite cluster for the UnG and the BnG? What do infinite forward clusters of the DnG look like?
 - **XOR graphs, in-percolation and strong percolation.** [[JKLT25](#ref-jklt25)] conjectures, for example, that the 2-XnG percolates if and only if $d\ge 3$, and that in-percolation occurs if and only if out-percolation does.
 - **Does less variability help percolation?** For planar models with the same edge density, [[CHJK24](#ref-chjk24)] conjectures that the critical points increase in the order: straight pairs (north-south or east-west), the 2-neighbour graph, corner pairs, independent edges, all-or-none. Which notion of variability explains this ordering?
 - **Numerics and rigorous bounds** for $p_c^D(d)$, $p_c^U(d)$ and $p_c^B(d)$ in small dimensions.

@@ -12,7 +12,7 @@ The repository collects work on these questions in three layers:
 
 Everyone is welcome to contribute, with or without AI tools. See [How to contribute](#how-to-contribute).
 
-**Contents:** [The models](#the-models) · [What is known](#what-is-known) · [The toolbox problem](#the-toolbox-problem) · [Research directions](#research-directions) · [Repository layout](#repository-layout) · [Workflow](#workflow) · [How to contribute](#how-to-contribute) · [Credit, citation and licence](#credit-citation-and-licence) · [References](#references)
+**Contents:** [The models](#the-models) · [What is known](#what-is-known) · [Claims under review](#claims-under-review) · [The toolbox problem](#the-toolbox-problem) · [Research directions](#research-directions) · [Repository layout](#repository-layout) · [Workflow](#workflow) · [How to contribute](#how-to-contribute) · [Credit, citation and licence](#credit-citation-and-licence) · [References](#references)
 
 ---
 
@@ -53,7 +53,7 @@ is well defined.
 - $d=2$: the 2-DnG percolates, and $0.3732\le p_c^D(2) < 1/2$ [[CHJK24](#ref-chjk24)]. By diagonal monotonicity the $d$-DnG percolates in $\mathbb{Z}^d$ for every $d\ge 2$.
 - $k\ge 3$: the $k$-DnG percolates in every dimension $d\ge 2$ [[JKLT25](#ref-jklt25), [CHJK24](#ref-chjk24), [BJKLRT25](#ref-bjklrt25)].
 - High dimensions: $p_c^D(d)\le p_c^{\mathrm{bond}}(d)$ for all $d$, and $2d\cdot p_c^D(d)\to 1$ as $d\to\infty$. In particular the 2-DnG percolates in all sufficiently large dimensions [[BJKLRT25](#ref-bjklrt25)].
-- Open: $k=2$ in any specific dimension $d\ge 3$, for both the DnG and the UnG [[BJKLRT25](#ref-bjklrt25)]. A recent preprint, [arXiv:2610.38200](https://arxiv.org/abs/2610.38200), announces in its title that two-neighbour lattice percolation percolates in all dimensions; it has not yet been digested here.
+- Open: $k=2$ in any specific dimension $d\ge 3$, for both the DnG and the UnG [[BJKLRT25](#ref-bjklrt25)]. A proof for every $d\ge 3$ is claimed in the raw AI output [`ai-outputs/2_NN_percolates/`](ai-outputs/2_NN_percolates/) (see [Claims under review](#claims-under-review)), and the preprint [arXiv:2610.38200](https://arxiv.org/abs/2610.38200) announces in its title that two-neighbour lattice percolation percolates in all dimensions. Neither has been digested yet.
 - Simulations: $2d\cdot p_c^D(d)\approx 1.84,\ 1.38,\ 1.20$ for $d=2,3,4$ [[CHJK24](#ref-chjk24)].
 
 **Bidirectional graph.**
@@ -63,6 +63,19 @@ is well defined.
 - High dimensions: $\sqrt{2d}\cdot p_c^B(d)\to 1$, so the critical $k$ grows like $\sqrt{2d}$ [[BJKLRT25](#ref-bjklrt25)].
 
 **Comparison with other planar models.** At the same edge density, the 2-DnG percolates more easily than independent directed bond percolation, which in turn percolates more easily than the all-or-none model (each vertex opens all of its edges or none): $p_c^D(2) < 1/2 = p_c^{\mathrm{iid}}(2) < p_c^{\mathrm{aon}}(2)$ [[CHJK24](#ref-chjk24)]. More generally, degree constraints enhance percolation [[BJKLRT25](#ref-bjklrt25)].
+
+---
+
+## Claims under review
+
+Claims from raw AI outputs that have not been digested yet. They do not count as results until a digest marks them `verified`.
+
+**[`ai-outputs/2_NN_percolates/`](ai-outputs/2_NN_percolates/)**: a manuscript drafted with Claude (Anthropic), available as a [PDF](ai-outputs/2_NN_percolates/2_NN_percolates.pdf) together with its LaTeX sources, figures and code. No digest yet. It claims:
+
+- The 2-DnG percolates in every dimension $d\ge 3$, with a bound that does not depend on $d$: $\theta^D(2,d)\ge\theta_2^{\mathrm{bond}}(13/25) > 0$, where $\theta_2^{\mathrm{bond}}(p)$ is the percolation probability of Bernoulli bond percolation on $\mathbb{Z}^2$. Combined with the results above, the $k$-DnG and the $k$-UnG then percolate if and only if $k\ge 2$, in every dimension, as conjectured in [[JKLT25](#ref-jklt25)].
+- Rigorous computer-assisted upper bounds on $2d\cdot p_c^D(d)$ that decrease in $d$, from $1.834$ for $d=3$ to $1.130$ for $d=100$, and new simulated values for $5\le d\le 15$.
+
+The proof represents each vertex of $\mathbb{Z}^{d-1}$ by a vertical column of $\mathbb{Z}^d$, tracks the avoidance probabilities of exchangeable laws through an explicit recursion, compares consecutive dimensions by an exact algebraic inequality, and concludes in the plane with the comparison principle of [[BJKLRT25](#ref-bjklrt25)] and Kesten's theorem.
 
 ---
 
@@ -93,6 +106,7 @@ For Bernoulli percolation, $p_c(d+1)\le p_c(d)$ is immediate because $\mathbb{Z}
 
 - **Conjecture** [[JKLT25](#ref-jklt25)]: $\theta^D(k,d+1)\ge\theta^D(k,d)$ for all $2\le k\le d$. Together with [[CHJK24](#ref-chjk24)] this would show that the 2-DnG percolates in every dimension.
 - Is $d\mapsto 2d\cdot p_c^D(d)$ non-increasing? The simulated values $1.84$, $1.38$, $1.20$ for $d=2,3,4$ suggest so [[CHJK24](#ref-chjk24)].
+- Claimed in [`ai-outputs/2_NN_percolates/`](ai-outputs/2_NN_percolates/), no digest yet: rigorous upper bounds on $2d\cdot p_c^D(d)$ and simulated values for $5\le d\le 15$, both decreasing in $d$, and an explanation of why a single projection step from $\mathbb{Z}^{d+1}$ to $\mathbb{Z}^d$ cannot compare $p_c^D(d+1)$ with $p_c^D(d)$ directly.
 - Known: diagonal monotonicity $\theta^D(k+1,d+1)\ge\theta^D(k,d)$, proved by a coupling [[JKLT25](#ref-jklt25)].
 
 ### P2 · A shape theorem for the directed 2-neighbour graph in the plane
@@ -109,8 +123,8 @@ The classical proofs (Menshikov, Aizenman–Barsky, Duminil-Copin–Tassion, and
 
 ### Further directions
 
-- **$k=2$ in dimensions $d\ge 3$.** Percolation is known for $d=2$ and for all sufficiently large $d$; the dimensions in between are open, pending a digest of arXiv:2610.38200 (see [What is known](#what-is-known)).
-- **Bidirectional graphs in low dimensions.** Settle the open cases in the table above. For example, does the 3-BnG percolate in $d=2$? It is conjectured to [[JKLT25](#ref-jklt25)].
+- **$k=2$ in dimensions $d\ge 3$.** Percolation is known for $d=2$ and for all sufficiently large $d$. A proof for every $d\ge 3$ is claimed in [`ai-outputs/2_NN_percolates/`](ai-outputs/2_NN_percolates/); digesting it has priority (see [Claims under review](#claims-under-review)).
+- **Bidirectional graphs in low dimensions.** Close the gap between the two criteria for the BnG above in small dimensions. For example, does the 3-BnG percolate in $d=2$? It is conjectured to [[JKLT25](#ref-jklt25)].
 - **Uniqueness and the structure of infinite clusters.** The Burton–Keane argument [[BK89](#ref-bk89)] needs insertion tolerance. Is vertex-wise resampling enough to prove uniqueness of the infinite cluster for the UnG and the BnG? What do infinite forward clusters of the DnG look like?
 - **XOR graphs, in-percolation and strong percolation.** [[JKLT25](#ref-jklt25)] conjectures, for example, that the 2-XnG percolates if and only if $d\ge 3$, and that in-percolation occurs if and only if out-percolation does.
 - **Does less variability help percolation?** For planar models with the same edge density, [[CHJK24](#ref-chjk24)] conjectures that the critical points increase in the order: straight pairs (north-south or east-west), the 2-neighbour graph, corner pairs, independent edges, all-or-none. Which notion of variability explains this ordering?
@@ -150,10 +164,10 @@ flowchart LR
 
 ### 1. Raw AI outputs (`ai-outputs/`)
 
-Every run gets its own folder `ai-outputs/YYYY-MM-DD_<model>_<topic>/` with three files:
+Every run gets its own folder in `ai-outputs/`, for example `ai-outputs/YYYY-MM-DD_<model>_<topic>/`, containing
 
+- the complete output, exactly as produced: `output.md` for a chat transcript (for multi-turn sessions, the full transcript), or all files the model wrote, such as LaTeX sources, figures and code, together with the compiled PDF (see `ai-outputs/2_NN_percolates/`);
 - `prompt.md`: the complete prompt, including any system prompt or custom instructions, and a list of all files given to the model;
-- `output.md`: the complete output, copied verbatim (for multi-turn sessions, the full transcript);
 - `meta.yml`: the provenance of the run.
 
 ```yaml
@@ -223,7 +237,8 @@ Please keep pull requests small and focused on one topic.
 
 **Good first contributions**
 
-- Digest an existing raw output, or re-check a claim labelled `unchecked`.
+- Help digest [`ai-outputs/2_NN_percolates/`](ai-outputs/2_NN_percolates/): check one of the lemmas in Section 4 of the [manuscript](ai-outputs/2_NN_percolates/2_NN_percolates.pdf), or re-run the exact computations in `code/exact_all.py`, `code/rig_table.py` and `code/star_identity.py`.
+- Digest another raw output, or re-check a claim labelled `unchecked`.
 - Write the page in `problems/` for one of the research directions.
 - Run simulations, for example to estimate $p_c^D(3)$ or to test monotonicity in $d$ numerically.
 - Take a classical proof (Burton–Keane, Menshikov, Garet–Marchand, ...) and mark every step that uses FKG, finite energy or independence of edges. Such annotated proofs are the starting point of the toolbox.
@@ -248,7 +263,7 @@ Please keep pull requests small and focused on one topic.
   title        = {Discrete $k$-nearest-neighbour graphs: a community research project},
   author       = {{Contributors to the discrete k-nearest-neighbour graph project}},
   year         = {2026},
-  howpublished = {\url{https://github.com/ORG/REPO}}
+  howpublished = {\url{https://github.com/jonaskoeppl/percolation-discrete-knn}}
 }
 ```
 

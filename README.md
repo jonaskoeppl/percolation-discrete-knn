@@ -62,13 +62,6 @@ is well defined.
 - Percolation if $k > 1.5834\cdot d$ [[JKLT25](#ref-jklt25)], and for all $k\ge 6$ in dimensions $4$ and $5$ [[BJKLRT25](#ref-bjklrt25)].
 - High dimensions: $\sqrt{2d}\cdot p_c^B(d)\to 1$, so the critical $k$ grows like $\sqrt{2d}$ [[BJKLRT25](#ref-bjklrt25)].
 
-| $d$ | does not percolate | open | percolates |
-|:-:|:-:|:-:|:-:|
-| 2 | $k\le 2$ | $k=3$ | $k=4$ |
-| 3 | $k\le 3$ | $k=4$ | $k\ge 5$ |
-| 4 | $k\le 3$ | $k\in\lbrace 4,5\rbrace$ | $k\ge 6$ |
-| 5 | $k\le 3$ | $k\in\lbrace 4,5\rbrace$ | $k\ge 6$ |
-
 **Comparison with other planar models.** At the same edge density, the 2-DnG percolates more easily than independent directed bond percolation, which in turn percolates more easily than the all-or-none model (each vertex opens all of its edges or none): $p_c^D(2) < 1/2 = p_c^{\mathrm{iid}}(2) < p_c^{\mathrm{aon}}(2)$ [[CHJK24](#ref-chjk24)]. More generally, degree constraints enhance percolation [[BJKLRT25](#ref-bjklrt25)].
 
 ---

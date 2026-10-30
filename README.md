@@ -240,7 +240,7 @@ Please keep pull requests small and focused on one topic.
 - Digest another raw output, or re-check a claim labelled `unchecked`.
 - Write the page in `problems/` for one of the research directions.
 - Run simulations, for example to estimate $p_c^D(3)$ or to test monotonicity in $d$ numerically.
-- Take a classical proof (Burton–Keane, Menshikov, Garet–Marchand, ...) and mark every step that uses FKG, finite energy or independence of edges. Such annotated proofs are the starting point of the toolbox.
+- Take a classical proof and mark every step that uses FKG, finite energy or independence of edges. Such annotated proofs are the starting point of the toolbox.
 
 **Using AI tools well**
 

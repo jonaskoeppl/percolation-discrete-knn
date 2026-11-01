@@ -77,8 +77,6 @@ Claims from raw AI outputs that have not been digested yet. They do not count as
 
 The proof represents each vertex of $\mathbb{Z}^{d-1}$ by a vertical column of $\mathbb{Z}^d$, tracks the avoidance probabilities of exchangeable laws through an explicit recursion, compares consecutive dimensions by an exact algebraic inequality, and concludes in the plane with the comparison principle of [[BJKLRT25](#ref-bjklrt25)] and Kesten's theorem.
 
----
-
 [`ai-outputs/2026-11-01_claude-opus-5-5_critical-mean-outdegrees/`](ai-outputs/2026-11-01_claude-opus-5-5_critical-mean-outdegrees/): a manuscript drafted with Claude Opus 5.5 (Anthropic), *Critical mean out-degrees of directed, undirected and bidirectional lattice neighbour graphs*, with LaTeX sources, code and simulation data; timestamped on Zenodo, [doi:10.5281/zenodo.23859215](https://doi.org/10.5281/zenodo.23859215). Status: `unchecked`, no digest yet. In terms of $\beta=2dp$ it claims:
 
 - $\beta_c^{B}(d)=\sqrt{2d}+1/2+O(d^{-1/2})$, with $\beta_c^{B}(d)\ge\sqrt{2d}+1/2$ for all $d\ge2$, and $2.6197\le\beta_c^{B}(2)<3$ (enhancement argument).
@@ -88,6 +86,7 @@ The proof represents each vertex of $\mathbb{Z}^{d-1}$ by a vertical column of $
 
 The column projection overlaps with `ai-outputs/2_NN_percolates/` and with [LXZ26].
 
+---
 
 ## The toolbox problem
 

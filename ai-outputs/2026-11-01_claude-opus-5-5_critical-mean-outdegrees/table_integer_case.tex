@@ -1,0 +1,24 @@
+\begin{table}[ht]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\diagbox[width=3.2em,height=2.4em]{$d$}{$k$} & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $\ge7$\\\hline
+$1$ & no/no/no & yes/yes/yes & -- & -- & -- & -- & --\\\hline
+$2$ & no/no/no & no/\cCH{yes}/yes & \cNew{yes}/yes/yes & yes/yes/yes & -- & -- & --\\\hline
+$3$ & no/no/no & no/\cLX{yes}/\cLX{yes} & no/\cCH{yes}/yes & \cNew{yes}/yes/yes & yes/yes/yes & yes/yes/yes & --\\\hline
+$4$ & no/no/no & no/\cLX{yes}/\cLX{yes} & no/\cBJ{yes}/\cBJ{yes} & open/yes/yes & \cNew{yes}/yes/yes & \cBJ{yes}/yes/yes & yes/yes/yes\\\hline
+$5$ & no/no/no & no/\cLX{yes}/\cLX{yes} & no/yes/yes & open/yes/yes & open/yes/yes & \cBJ{yes}/yes/yes & \cBJ{yes}/yes/yes\\\hline
+$6$ & no/no/no & no/\cLX{yes}/\cLX{yes} & no/yes/yes & no/yes/yes & open/yes/yes & \cNew{yes}/yes/yes & \cBJ{yes}/yes/yes\\\hline
+$7$--$9$ & no/no/no & no/\cLX{yes}/\cLX{yes} & no/yes/yes & no/yes/yes & open/yes/yes & open/yes/yes & \cNew{yes}/yes/yes\\\hline
+$10$ & no/no/no & no/\cLX{yes}/\cLX{yes} & no/yes/yes & no/yes/yes & \cNew{no}/yes/yes & open/yes/yes & open/yes/yes\\\hline
+$11$--$14$ & no/no/no & no/\cLX{yes}/\cLX{yes} & no/yes/yes & no/yes/yes & \cNew{no}/yes/yes & \cNew{yes}/yes/yes & \cNew{yes}/yes/yes\\\hline
+$15$--$17$ & no/no/no & no/\cLX{yes}/\cLX{yes} & no/yes/yes & no/yes/yes & \cNew{no}/yes/yes & \cNew{no}/yes/yes & \cNew{yes}/yes/yes\\\hline
+$18$--$19$ & no/no/no & no/\cLX{yes}/\cLX{yes} & no/yes/yes & no/yes/yes & \cNew{no}/yes/yes & \cNew{no}/yes/yes & open/yes/yes\\\hline
+$20$ & no/no/no & no/\cLX{yes}/\cLX{yes} & no/yes/yes & no/yes/yes & \cNew{no}/yes/yes & \cNew{no}/yes/yes & \cNew{yes}/yes/yes\\\hline
+large & no/no/no & no/\cBJ{yes}/\cBJ{yes} & no/yes/yes & no/yes/yes & no/yes/yes & no/yes/yes & no/yes/yes\\\hline
+\end{tabular}
+\caption{Percolation results and open cases for the BnG/DnG/UnG with integer $k=\beta$, in the format of \cite[Table~1]{BJKLRT25}. For given $k,d$, ``yes'' means that the given graph percolates, ``no'' that it does not, and ``open'' that the case is at least partially open. Black: \cite{JKLT25}; blue: \cite{CHJK26}; red: \cite{BJKLRT25}; orange: \cite{LXZ26}; green: this paper (\cref{thm:comparison,thm:absence,thm:planar} with the inputs of \cref{tab:bounds}). In the row $7$--$9$ the entry for $k\ge7$ follows for $d=7$ also from \cite[Corollary~3.11]{BJKLRT25} with the bounds of \cite{GPS26}. In $d=10$ and $d\in\{18,19\}$ the BnG percolates for $k\ge8$, and $k=7$ is open in these dimensions. For $d\in\{21,22,23\}$ the BnG percolates if and only if $k\ge8$. The row ``large'' refers to fixed $k$ and all sufficiently large $d$; there the BnG does not percolate as soon as $k(k-1)\le2d$ \cite[Lemma~2.6]{JKLT25}, and by \cref{thm:asymptotics} its critical value of $\beta$ is $\sqrt{2d}+1/2+O(d^{-1/2})$. The red entry for $d=6$, $k\ge7$ follows from \cite[Corollary~3.11]{BJKLRT25} with the bounds of \cite{GPS26}. For $d\ge11$ the green entries use the bounds of \cite[Theorem~1.2]{FvdH17} for $d\in\{11,\dots,15,20\}$, together with $\pc(d)\le\pc(15)$ for $d\in\{16,17\}$ and $\pc(d)\le\pc(20)$ for $d\in\{21,22,23\}$.}\label{tab:integer}
+\end{table}

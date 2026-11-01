@@ -1,0 +1,32 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.85,
+  v/.style={circle,fill=black!35,inner sep=0pt,minimum size=2.2pt},
+  cv/.style={circle,fill=serB,inner sep=0pt,minimum size=4.2pt},
+  orig/.style={circle,draw=serB,line width=0.9pt,inner sep=0pt,minimum size=8pt},
+  entry/.style={rectangle,draw=serB,line width=0.8pt,inner sep=0pt,minimum size=6pt},
+  edge/.style={-{Stealth[length=2.6pt,width=2.2pt]},black!40,line width=0.45pt},
+  clus/.style={-{Stealth[length=3.4pt,width=2.8pt]},serB,line width=0.95pt},
+  ign/.style={-{Stealth[length=3pt,width=2.6pt]},black!65,densely dashed,line width=0.6pt},
+  guide/.style={black!55,line width=0.5pt}]
+\foreach \x in {-2,0,2} \foreach \z in {-1,...,3} \node[v] at (\x,\z) {};
+\fill[black!8] (-0.32,-0.32) rectangle (0.32,2.32);
+\foreach \z in {0,1,2} \node[cv] at (0,\z) {};
+\node[orig] at (0,0) {};
+\draw[clus] (0,0.2) -- (0,0.8);
+\draw[clus] (-0.2,0) -- (-1.8,0);
+\draw[clus] (-0.09,1.2) -- (-0.09,1.8);
+\draw[clus] (0.2,1) -- (1.8,1);
+\draw[ign] (0.12,1.8) -- (0.12,1.2);
+\draw[edge] (0.2,2) -- (1.8,2);
+\node[entry] at (-2,0) {};
+\node[entry] at (2,1) {};
+\node[left=5pt] at (-2,0) {\small $(y-u,h)$};
+\node[right=5pt] at (2,1) {\small $(y+u,h+1)$};
+\node[below right=2pt] at (0,0) {\small $(y,h)$};
+\foreach \x/\l in {-2/{y-u},0/{y},2/{y+u}} \node at (\x,-1.7) {\small $\l$};
+\draw[->,guide] (-4.3,-1.35) -- (3.2,-1.35) node[right] {\small $\Z^{d-1}$};
+\draw[->,guide] (-4.3,-1.35) -- (-4.3,3.4) node[above] {\small $\Z$};
+\end{tikzpicture}
+\caption{Schematic column exploration from $(y,h)$; the horizontal axis represents $\Z^{d-1}$ by a single direction~$u$. The vertex $(y,h)$ keeps $+e_d$ and $-u$, the vertex $(y,h+1)$ keeps $+e_d$ and $+u$, and the vertex $(y,h+2)$ keeps $-e_d$, which plays no role (dashed), and $+u$. The explored set (shaded) is $E(y,h)=\{h,h+1,h+2\}$, the collected set is $M(y,h)=\{-u,+u\}$, and the squares mark the entry points $(y-u,h)$ and $(y+u,h+1)$ from which the neighbouring columns are explored.}\label{fig:column}
+\end{figure}

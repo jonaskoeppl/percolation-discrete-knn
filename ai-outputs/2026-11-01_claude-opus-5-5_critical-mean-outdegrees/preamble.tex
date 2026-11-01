@@ -1,0 +1,81 @@
+% Preamble for "Critical mean out-degrees of lattice neighbour graphs"
+\IfFileExists{lmodern.sty}{\usepackage[T1]{fontenc}\usepackage{lmodern}}{}
+\usepackage[british]{babel}
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{microtype}
+\setlength{\emergencystretch}{1em}
+\usepackage{xcolor}
+\definecolor{paperlink}{RGB}{0,0,114}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,decorations.pathmorphing}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linktoc=all,
+  linkcolor=paperlink,citecolor=paperlink,urlcolor=paperlink,pdfstartview=Fit,
+  pdftitle={Critical mean out-degrees of lattice neighbour graphs},
+  pdfauthor={Benedikt Jahnel, in conversation with Claude Opus 5.5}}
+\usepackage[capitalise,nameinlink]{cleveref}
+\crefname{figure}{Figure}{Figures}
+\Crefname{figure}{Figure}{Figures}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=2em,itemsep=0.25em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=2.25em,itemsep=0.25em,topsep=0.35em}
+\setlength{\parindent}{1.25em}
+\setlength{\parskip}{0pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Critical mean out-degrees of lattice neighbour graphs}
+\fancyhead[R]{\small\thepage}
+\setlength{\headheight}{14pt}
+\numberwithin{equation}{section}
+
+\usepackage{dsfont}
+\newcommand{\1}{\mathds 1}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[equation]{Theorem}
+\newtheorem{proposition}[equation]{Proposition}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{corollary}[equation]{Corollary}
+\newtheorem{conjecture}[equation]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[equation]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[equation]{Remark}
+
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\renewcommand{\P}{\mathbb P}
+\newcommand{\E}{\mathbb E}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\pc}{p_{\mathrm c}}
+\newcommand{\kc}{k_{\mathrm c}}
+\newcommand{\bond}{\mathrm{bond}}
+\newcommand{\iid}{\mathrm{iid}}
+\newcommand{\lra}{\longleftrightarrow}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\Piv}{\mathrm{Piv}}
+\AtBeginDocument{\renewcommand{\c}{\mathrm c}}
+\AtBeginDocument{\renewcommand{\d}{\mathrm d}}
+\definecolor{colCH}{RGB}{0,0,200}
+\definecolor{colBJ}{RGB}{200,0,0}
+\definecolor{colLX}{RGB}{210,110,0}
+\definecolor{colNew}{RGB}{0,140,0}
+\newcommand{\cCH}[1]{\textcolor{colCH}{#1}}
+\newcommand{\cBJ}[1]{\textcolor{colBJ}{#1}}
+\newcommand{\cLX}[1]{\textcolor{colLX}{#1}}
+\newcommand{\cNew}[1]{\textcolor{colNew}{#1}}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepgfplotslibrary{fillbetween}
+\definecolor{serB}{HTML}{2A78D6}
+\definecolor{serD}{HTML}{EB6834}
+\definecolor{serU}{HTML}{1BAF7A}
+\newcommand{\bc}{\beta_{\mathrm c}}
+\usepackage{diagbox}

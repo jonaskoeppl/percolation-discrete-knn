@@ -1,0 +1,10 @@
+date: 2026-11-01
+contributor: Benedikt Jahnel (@GITHUB-HANDLE)
+model: Claude Opus 5.5 (claude-opus-5-5), Anthropic
+interface: Claude desktop app (Cowork), agent with code execution, web search and file access; several sessions
+settings: default settings
+context: JKLT25, CHJK24, BJKLRT25, LXZ26 and the earlier repository output ai-outputs/2_NN_percolates/; published bounds on p_c(d) and c(d) (GPS26, FvdH17, PT00)
+problem: TBD          # page in problems/ (critical values and monotonicity in d)
+digests: []
+zenodo: https://doi.org/10.5281/zenodo.23859215
+status: unchecked

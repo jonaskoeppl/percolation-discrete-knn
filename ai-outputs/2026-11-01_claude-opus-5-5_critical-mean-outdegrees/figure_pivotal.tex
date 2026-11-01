@@ -1,0 +1,23 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=1.0,>={Stealth[length=4pt]}]
+\draw[black!30] (-4.2,-2.2) rectangle (4.2,2.2);
+\node[black!55,font=\small,anchor=north east] at (4.15,2.15) {$\partial B_n$};
+\fill (-3.6,0) circle (2pt) node[left] {$o$};
+\fill (0,0) circle (2.6pt) node[below right] {$a$};
+\foreach \p/\n in {(-1,0)/w,(0,-1)/s,(1,0)/e,(0,1)/n} \fill[black!70] \p circle (2pt);
+\draw[serB,line width=1.1pt,decorate,decoration={snake,amplitude=1.2pt,segment length=6pt}] (-3.6,0)--(-1,0);
+\draw[serB,line width=1.1pt,decorate,decoration={snake,amplitude=1.2pt,segment length=6pt}] (-3.6,0) .. controls (-2.5,-1.4) .. (0,-1);
+\draw[serD,line width=1.1pt,decorate,decoration={snake,amplitude=1.2pt,segment length=6pt}] (1,0)--(4.2,0.3);
+\draw[serD,line width=1.1pt,decorate,decoration={snake,amplitude=1.2pt,segment length=6pt}] (0,1) .. controls (1.5,1.6) .. (4.2,1.5);
+\draw[->,black,line width=0.9pt] (-1,0)--(-0.22,0);
+\draw[->,black,line width=0.9pt] (0,-1)--(0,-0.22);
+\draw[->,black,line width=0.9pt] (1,0)--(0.22,0);
+\draw[black!40,densely dotted,line width=0.9pt] (0,1)--(0,0.2);
+\node[font=\small,serB] at (-1.9,0.35) {$O_a$};
+\node[font=\small,serD] at (2.4,-0.15) {$T_a$};
+\node[font=\footnotesize,align=center] at (-0.75,-0.65) {$-e_1,-e_2$\\$\in O_a^*$};
+\node[font=\footnotesize,align=left,anchor=west] at (0.35,0.55) {$e_1\in T_a^*$, $e_2\in T_a\setminus T_a^*$};
+\end{tikzpicture}
+\caption{The pivotal decomposition of \cref{lem:pivotal} at a vertex $a$ that is not already bypassed. The neighbours $a-e_1$ and $a-e_2$ are connected to $o$, and $a+e_1$ and $a+e_2$ to $\partial B_n$, by open paths avoiding $a$, so that $O_a=\{-e_1,-e_2\}$ and $T_a=\{e_1,e_2\}$. Arrows indicate neighbours that keep the edge to $a$; here $O_a^*=\{-e_1,-e_2\}$ and $T_a^*=\{e_1\}$. In the bidirectional graph, $o$ is connected to $\partial B_n$ if and only if $N_a$ meets both $O_a^*$ and $T_a^*$, an event of type $\Psi(A,B)$ with $|A|=1$ and $|B|=2$. In the undirected graph the connection is already present, since $O_a^*$ and $T_a^*$ are nonempty.}\label{fig:pivotal}
+\end{figure}

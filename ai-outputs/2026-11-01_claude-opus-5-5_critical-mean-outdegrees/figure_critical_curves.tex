@@ -1,0 +1,24 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.82\textwidth,height=0.5\textwidth,xmin=1.6,xmax=10.9,ymin=0.85,ymax=5.4,
+  xlabel={dimension $d$},ylabel={critical mean out-degree $\bc(d)$},xtick={2,...,10},
+  axis lines=left,tick style={black!50},grid=major,grid style={black!8},
+  every axis plot/.append style={line width=1pt},legend style={draw=none,fill=none,font=\small},legend pos=north west,legend cell align=left]
+\addplot[black!45,dashed,domain=2:10.5,samples=60,line width=0.6pt] {sqrt(2*x)+0.5};
+\addlegendentry{$\sqrt{2d}+1/2$}
+\addplot[black!45,dotted,domain=2:10.5,samples=60,line width=0.8pt] {1+1/(2*x)};
+\addlegendentry{$1+1/(2d)$}
+\addplot[serB,mark=*,mark size=2.4pt] coordinates {(2,2.8400) (3,3.1617) (4,3.4431) (5,3.7361) (6,4.0361) (7,4.2800) (8,4.5219) (9,4.7711) (10,5.0171)};
+\addlegendentry{bidirectional (B)}
+\addplot[serD,mark=square*,mark size=2.2pt] coordinates {(2,1.8400) (3,1.3800) (4,1.2000) (5,1.1457) (6,1.1089) (7,1.0880) (8,1.0742) (9,1.0643) (10,1.0568)};
+\addlegendentry{directed (D)}
+\addplot[serU,mark=triangle*,mark size=2.8pt] coordinates {(2,1.2489) (3,1.0561) (4,1.0192) (5,1.0093) (6,1.0052) (7,1.0034) (8,1.0025) (9,1.0019) (10,1.0015)};
+\addlegendentry{undirected (U)}
+\node[serB,anchor=west,font=\small] at (axis cs:10.15,5.02) {B};
+\node[serD,anchor=west,font=\small] at (axis cs:10.15,1.13) {D};
+\node[serU,anchor=west,font=\small] at (axis cs:10.15,0.95) {U};
+\end{axis}
+\end{tikzpicture}
+\caption{Simulated critical mean out-degrees of the bidirectional (circles), directed (squares) and undirected (triangles) lattice neighbour graphs, see \cref{tab:sim}. The dashed and dotted curves are the leading asymptotics of $\bc^{\mathrm B}$ and $\bc^{\mathrm D}$ from \cref{thm:asymptotics}. The uncertainties are smaller than the markers, except for D with $d\ge5$ (about $0.02$).}\label{fig:curves}
+\end{figure}

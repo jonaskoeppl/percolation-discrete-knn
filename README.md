@@ -79,6 +79,16 @@ The proof represents each vertex of $\mathbb{Z}^{d-1}$ by a vertical column of $
 
 ---
 
+[`ai-outputs/2026-11-01_claude-opus-5-5_critical-mean-outdegrees/`](ai-outputs/2026-11-01_claude-opus-5-5_critical-mean-outdegrees/): a manuscript drafted with Claude Opus 5.5 (Anthropic), *Critical mean out-degrees of directed, undirected and bidirectional lattice neighbour graphs*, with LaTeX sources, code and simulation data; timestamped on Zenodo, [doi:10.5281/zenodo.23859215](https://doi.org/10.5281/zenodo.23859215). Status: `unchecked`, no digest yet. In terms of $\beta=2dp$ it claims:
+
+- $\beta_c^{B}(d)=\sqrt{2d}+1/2+O(d^{-1/2})$, with $\beta_c^{B}(d)\ge\sqrt{2d}+1/2$ for all $d\ge2$, and $2.6197\le\beta_c^{B}(2)<3$ (enhancement argument).
+- $\beta_c^{D}(d)=1+1/(2d)+O(d^{-2})$ and $1+(1+o(1))/(8d^2)\le\beta_c^{U}(d)\le1+1/(2d)+O(d^{-2})$.
+- Rigorous upper bounds on $\beta_c^{D}(d)$ for all $d\ge3$ from the column projection (for instance $\beta_c^{D}(3)\le1.834$, and $\beta_c^{D}(d)\le1.457$ for $d\ge9$), and the first comparisons between dimensions: $\beta_c^{D}(7)\le\beta_c^{D}(2)$ and $\beta_c^{D}(d)<\beta_c^{D}(2)$ for $d\ge8$.
+- A sharp local comparison of the BnG and UnG with Bernoulli bond percolation for all $\beta$, and simulated values of all three critical curves for $2\le d\le10$.
+
+The column projection overlaps with `ai-outputs/2_NN_percolates/` and with [LXZ26].
+
+
 ## The toolbox problem
 
 Much of percolation theory rests on a few structural properties of Bernoulli percolation. The table records what becomes of them for $k$-neighbour graphs. Layer 3 of this project is about filling in the right-hand column.

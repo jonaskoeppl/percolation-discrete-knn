@@ -2,7 +2,7 @@
 
 *An open research project on percolation in lattice $k$-neighbour graphs, and on doing percolation theory without FKG and finite energy.*
 
-Let every vertex of $\mathbb{Z}^d$ independently choose $k$ of its $2d$ nearest neighbours uniformly at random and connect to them. This simple rule defines a family of percolation models (directed, undirected, bidirectional, and XOR $k$-neighbour graphs) introduced in [[JKLT25](#ref-jklt25)] and studied further in [[CHJK24](#ref-chjk24)] and [[BJKLRT25](#ref-bjklrt25)]. Whether these graphs percolate is now known for most pairs $(k,d)$. Yet the degree constraint removes much of the standard machinery of percolation theory: there is no Harris–FKG inequality, no finite-energy property, no stochastic domination by Bernoulli percolation and no evident monotonicity in the dimension. Many natural questions are therefore open, and answering them calls for tools that do not depend on these properties.
+Let every vertex of $\mathbb{Z}^d$ independently choose $k$ of its $2d$ nearest neighbours uniformly at random and connect to them. This simple rule defines a family of percolation models (directed, undirected, bidirectional, and XOR $k$-neighbour graphs) introduced in [[JKLT25](#ref-jklt25)] and studied further in [[CHJK24](#ref-chjk24)], [[BJKLRT25](#ref-bjklrt25)] and [[CHJK26](#ref-chjk26)]. Whether these graphs percolate is now known for most pairs $(k,d)$. Yet the degree constraint removes much of the standard machinery of percolation theory: there is no Harris–FKG inequality, no finite-energy property, no stochastic domination by Bernoulli percolation and no evident monotonicity in the dimension. Many natural questions are therefore open, and answering them calls for tools that do not depend on these properties.
 
 The repository collects work on these questions in three layers:
 
@@ -43,7 +43,7 @@ is well defined.
 
 ## What is known
 
-*Status as of October 2026. If something is missing or out of date, please open a pull request.*
+*Status as of November 2026. If something is missing or out of date, please open a pull request.*
 
 **Directed and undirected graphs.** The DnG is contained in the UnG, so every positive result for the DnG also holds for the UnG.
 
@@ -63,6 +63,14 @@ is well defined.
 - High dimensions: $\sqrt{2d}\cdot p_c^B(d)\to 1$, so the critical $k$ grows like $\sqrt{2d}$ [[BJKLRT25](#ref-bjklrt25)].
 
 **Comparison with other planar models.** At the same edge density, the 2-DnG percolates more easily than independent directed bond percolation, which in turn percolates more easily than the all-or-none model (each vertex opens all of its edges or none): $p_c^D(2) < 1/2 = p_c^{\mathrm{iid}}(2) < p_c^{\mathrm{aon}}(2)$ [[CHJK24](#ref-chjk24)]. More generally, degree constraints enhance percolation [[BJKLRT25](#ref-bjklrt25)].
+
+**Uniqueness and full coverage.** All results in this paragraph are from [[CHJK26](#ref-chjk26)] and hold for the $2dp$-neighbour graph with $d\ge 2$. Let $N^{U}$ be the number of infinite clusters of the UnG, and let $N^{D}$ and $N^{S}$ be the numbers of infinite forward clusters and of infinite strong forward clusters of the DnG, where forward clusters that differ in only finitely many vertices are counted once. The strong forward cluster of $x$ is the set of vertices $y$ with $x\leadsto y$ and $y\leadsto x$.
+
+- $N^{U}\le 1$ almost surely, for every $p\in[0,1]$. The proof is a Burton–Keane argument [[BK89](#ref-bk89)] in which the local modification rewires the out-sets of the vertices of a box instead of opening edges.
+- In the plane, $N^{D}\le 1$ and $N^{S}\le 1$ almost surely for every $p\ge 1/2$, using the crossing estimate of [[CHJK24](#ref-chjk24)]; below the respective critical points this is trivial. In particular, for $p\ge 1/2$ there is exactly one infinite forward cluster up to finite modifications.
+- Consequently, $p\mapsto\theta^{U}_p(d)$ is continuous except possibly at $p_c^{U}(d)$, and in the plane the same holds for forward and strong forward clusters on $[1/2,1]$.
+- Full coverage: if $2dp\ge d+1$, every vertex has an infinite forward cluster and the cluster of the origin in the UnG is almost surely all of $\mathbb{Z}^d$; if $2dp < d+1$, finite clusters occur almost surely. If $2dp > d+1$, any two vertices of $\lbrace -n,\dots,n\rbrace^d$ are connected inside $\lbrace -2n,\dots,2n\rbrace^d$ with probability at least $1-c_1e^{-c_2n}$. Hence $\theta^{U}_p(d)$ is not real-analytic on $(p_c^{U}(d),1)$, unlike the percolation function of Bernoulli percolation.
+- The full-coverage transition at $p_f=(d+1)/(2d)$ is of order $2^d$: $1-\theta^{U}_p(d)$ vanishes like $(p_f-p)^{2^d}$ as $p\uparrow p_f$, and $\theta^{U}_p(d)$ is $2^d-1$ but not $2^d$ times differentiable at $p_f$.
 
 ---
 
@@ -95,7 +103,7 @@ Much of percolation theory rests on a few structural properties of Bernoulli per
 | Tool | Status for $k$-neighbour graphs | Available instead |
 |---|---|---|
 | Harris–FKG inequality | **fails**: edges leaving the same vertex are negatively correlated | for integer $k$ the directed edge variables are negatively associated (sampling without replacement [[JDP83](#ref-jdp83)]) |
-| Finite energy, insertion tolerance | **fails** for single edges: in the DnG every out-degree is exactly $k$ | vertex-wise resampling: given all other choices, $S_x$ is still uniform |
+| Finite energy, insertion tolerance | **fails** for single edges: in the DnG every out-degree is exactly $k$ | vertex-wise resampling: given all other choices, $S_x$ is still uniform; rewiring the out-sets of a box replaces the local modification in the Burton–Keane argument [[CHJK26](#ref-chjk26)] |
 | Stochastic domination by Bernoulli percolation | **fails** in both directions [[BJKLRT25](#ref-bjklrt25)] | site-wise local-to-global comparison [[BJKLRT25](#ref-bjklrt25)] |
 | Monotonicity in $d$ | **open**, and false in general | diagonal coupling $\theta^D(k+1,d+1)\ge\theta^D(k,d)$ [[JKLT25](#ref-jklt25)] |
 | Planar duality | the dual model is not a $k$-neighbour graph | exploration, comparison with constrained Bernoulli percolation, enhancement [[CHJK24](#ref-chjk24)] |
@@ -133,6 +141,11 @@ The classical proofs (Menshikov, Aizenman–Barsky, Duminil-Copin–Tassion, and
 ### Further directions
 
 - **$k=2$ in dimensions $d\ge 3$.** Percolation is known for $d=2$ and for all sufficiently large $d$. A proof for every $d\ge 3$ is claimed in [`ai-outputs/2_NN_percolates/`](ai-outputs/2_NN_percolates/); digesting it has priority (see [Claims under review](#claims-under-review)).
+- **Uniqueness in the directed and bidirectional graphs.** [[CHJK26](#ref-chjk26)] proves uniqueness for the UnG in every dimension and for forward and strong forward clusters of the DnG in the plane for $p\ge 1/2$ (see [What is known](#what-is-known)). Still open:
+  - $N^{D}\le 1$ and $N^{S}\le 1$ in dimensions $d\ge 3$;
+  - planar uniqueness for forward and strong forward clusters between the critical point and $1/2$; it would follow if the crossing estimate of [[CHJK24](#ref-chjk24)] held there;
+  - a directed analogue of the full-coverage transition and its order. For $p\ge p_f$ every forward cluster is infinite, so $\theta^{D}_p(d)=1$, but it is open what replaces full coverage and local uniqueness for forward clusters, and how $1-\theta^{D}_p(d)$ vanishes as $p\uparrow p_f$; for the UnG it vanishes like $(p_f-p)^{2^d}$;
+  - uniqueness of the infinite cluster for the BnG, which would give continuity of $\theta^{B}_p(d)$ away from $p_c^{B}(d)$.
 - **Bidirectional graphs in low dimensions.** Close the gap between the two criteria for the BnG above in small dimensions. For example, does the 3-BnG percolate in $d=2$? It is conjectured to [[JKLT25](#ref-jklt25)].
 - **XOR graphs, in-percolation and strong percolation.** [[JKLT25](#ref-jklt25)] conjectures, for example, that the 2-XnG percolates if and only if $d\ge 3$, and that in-percolation occurs if and only if out-percolation does.
 - **Does less variability help percolation?** For planar models with the same edge density, [[CHJK24](#ref-chjk24)] conjectures that the critical points increase in the order: straight pairs (north-south or east-west), the 2-neighbour graph, corner pairs, independent edges, all-or-none. Which notion of variability explains this ordering?
@@ -286,8 +299,12 @@ Please keep pull requests small and focused on one topic.
 **The three papers this project builds on**
 
 - <a id="ref-jklt25"></a>**[JKLT25]** B. Jahnel, J. Köppl, B. Lodewijks, A. Tóbiás. Percolation in lattice $k$-neighbor graphs. *J. Appl. Probab.* 62(4):1475–1492, 2025. [doi:10.1017/jpr.2025.15](https://doi.org/10.1017/jpr.2025.15) · [arXiv:2306.14888](https://arxiv.org/abs/2306.14888)
-- <a id="ref-chjk24"></a>**[CHJK24]** D. Coupier, B. Henry, B. Jahnel, J. Köppl. The planar lattice two-neighbor graph percolates. Preprint, 2024. [arXiv:2412.20781](https://arxiv.org/abs/2412.20781)
+- <a id="ref-chjk24"></a>**[CHJK24]** D. Coupier, B. Henry, B. Jahnel, J. Köppl. The planar lattice two-neighbor graph percolates. *Ann. Probab.*, to appear. [arXiv:2412.20781](https://arxiv.org/abs/2412.20781)
 - <a id="ref-bjklrt25"></a>**[BJKLRT25]** J. Bäumler, B. Jahnel, J. Köppl, B. Lodewijks, L. Reeves, A. Tóbiás. Local criteria for global connectivity comparisons: beyond stochastic domination. Preprint, 2025. [arXiv:2510.03934](https://arxiv.org/abs/2510.03934)
+
+**Further work on lattice $k$-neighbour graphs**
+
+- <a id="ref-chjk26"></a>**[CHJK26]** D. Coupier, B. Henry, B. Jahnel, J. Köppl. Uniqueness and full coverage in $k$-neighbor graphs. Preprint, 2026. [arXiv:2611.06800](https://arxiv.org/abs/2611.06800)
 
 **Continuum $k$-nearest-neighbour graphs and related models**
 
